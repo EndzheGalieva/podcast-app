@@ -23,7 +23,7 @@ export class Question {
     return fetch(`https://podcast--app-a0854-default-rtdb.europe-west1.firebasedatabase.app/questions.json?auth=${token}`)
       .then(response => response.json())
       .then(response => {
-        if (response.error) {
+        if (response && response.error) {
          return `<p class="error">${response.error}</p>`
         }
 
